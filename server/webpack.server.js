@@ -6,10 +6,10 @@ module.exports = {
      * Rather than for the browser
      */
 
-     targer: 'node',
+     target: 'node',
      
      // Tell webpack the root file of our server application.
-     enrtry: './src/index.js', 
+     entry: './src/index.js', 
     // Tells webpack where to put the output file that is generated
     output:{
         filename: 'bundle.js',
