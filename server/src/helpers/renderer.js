@@ -4,7 +4,6 @@ import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import serialize from 'serialize-javascript';
-import serialize from 'serialize-javascript';
 import Routes from '../client/Routes';
 
 export default (req, store) => {
