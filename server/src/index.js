@@ -8,27 +8,30 @@ import createStore from './helpers/createStore';
 
 const app = express();
 
-app.use(express.static("public"));
-
 // The third parameter is only for the course so we can work on the this specific API server.
 // It is so you don't run into some security errors with the Oauth flow.
-app.use('/api', proxy('http://react-ssr-api.herokuapp.com'), {
-    proxyReqOptDecorator(opts){
-        opts.header['x-forwarded-host'] = 'localhost:3000';
-        return opts;
-    }
-});
+app.use(
+    '/api',
+    proxy('http://react-ssr-api.herokuapp.com', {
+        proxyReqOptDecorator(opts) {
+            opts.headers['x-forwarded-host'] = 'localhost:3000';
+            return opts;
+        }
+    })
+);
+
+app.use(express.static("public"));
 
 app.get('*', (req, res) => {
-    const store = createStore();
+    const store = createStore(req);
 
-    const promises = matchRoutes(Routes, req.path).map(({ route })=>{
+    const promises = matchRoutes(Routes, req.path).map(({ route }) => {
         return route.loadData ? route.loadData(store) : null;
     });
 
     Promise.all(promises).then(() => {
         res.send(renderer(req, store));
-    });    
+    });
 });
 
 const PORT = 3000;
