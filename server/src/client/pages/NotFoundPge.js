@@ -1,7 +1,8 @@
 import React from 'react';
 
-const NotFoundPage = () => {
-    return <h1>Ooops, route not found,</h1>    
+const NotFoundPage = ({ staticContext = {} }) => {
+    staticContext.notFound = true;
+    return <h1>Ooops, route not found.</h1>    
 };
 
 export default {
