@@ -6,6 +6,6 @@ import authReducer from './authReducer';
 export default combineReducers({
     users: userReducer,
     auth: authReducer,
-    admis: adminsReducer
+    admins: adminsReducer
 
 });

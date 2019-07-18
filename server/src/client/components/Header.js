@@ -18,7 +18,7 @@ const Header = ({ auth }) => {
                 <Link to="/" className="brand-logo">React SSR</Link>
                 <ul className="right">
                     <li><Link to="/users">Users</Link></li>
-                    <li><Link to="/admin">Admins</Link></li>
+                    <li><Link to="/admins">Admins</Link></li>
                     <li>{authButton}</li>
                 </ul>
             </div>
