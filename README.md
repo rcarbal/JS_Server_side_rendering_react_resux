@@ -13,7 +13,7 @@ Simple server-side rendering application
 
 ![image](https://user-images.githubusercontent.com/20021751/62001055-a53a6d80-b09b-11e9-964e-118d5db3f879.png)
 
-## Public Route
+### Public Route
 ![image](https://user-images.githubusercontent.com/20021751/62001059-d2871b80-b09b-11e9-9ca3-cd2e4f9b3e53.png)
 
 ### Secure Routes
